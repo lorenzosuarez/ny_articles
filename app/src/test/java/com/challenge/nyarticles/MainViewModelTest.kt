@@ -13,7 +13,6 @@ import com.challenge.presentation.event.UIEvent
 import com.challenge.presentation.viewmodels.MainViewModel
 import io.mockk.coEvery
 import io.mockk.mockk
-import junit.framework.Assert.assertFalse
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.toList
