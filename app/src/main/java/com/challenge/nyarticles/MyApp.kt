@@ -1,6 +1,7 @@
 package com.challenge.nyarticles
 
 import android.app.Application
+import com.challenge.nyarticles.di.appModule
 import com.challenge.nyarticles.di.databaseModule
 import com.challenge.nyarticles.di.networkModule
 import com.challenge.nyarticles.di.repositoryModule
@@ -19,6 +20,7 @@ class MyApp : Application() {
             androidContext(this@MyApp)
             modules(
                 listOf(
+                    appModule,
                     databaseModule,
                     networkModule,
                     repositoryModule,

@@ -11,6 +11,7 @@ data class Article(
     val section: String,
     val subsection: String,
     val nytdSection: String,
+    val adxKeywords: String,
     val byline: String,
     val type: String,
     val title: String,

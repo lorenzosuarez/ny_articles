@@ -1,5 +1,7 @@
 package com.challenge.nyarticles.ui
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -7,28 +9,47 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.lifecycleScope
 import com.challenge.nyarticles.ui.theme.NyArticlesTheme
+import com.challenge.presentation.event.UIEvent
 import com.challenge.presentation.screens.MainScreen
 import com.challenge.presentation.viewmodels.MainViewModel
-import org.koin.androidx.viewmodel.ext.android.getViewModel
+import kotlinx.coroutines.launch
+import org.koin.android.ext.android.get
 
 class MainActivity : ComponentActivity() {
-    private lateinit var mainViewModel: MainViewModel
+    private val mainViewModel = get<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        mainViewModel = getViewModel()
-
+        observeUIEvents()
         setContent {
             NyArticlesTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,
                 ) {
-                    MainScreen(mainViewModel = mainViewModel)
+                    MainScreen(
+                        mainViewModel = mainViewModel,
+                    )
                 }
             }
         }
+    }
+
+    private fun observeUIEvents() {
+        lifecycleScope.launch {
+            mainViewModel.uiEvent.collect { event ->
+                when (event) {
+                    is UIEvent.OpenUrl -> openLinkInBrowser(event.url)
+                    else -> Unit
+                }
+            }
+        }
+    }
+
+    private fun openLinkInBrowser(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(intent)
     }
 }

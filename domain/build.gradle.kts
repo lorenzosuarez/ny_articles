@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -30,4 +31,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+}
+
+dependencies {
+    implementation(libs.ktor.serialization.kotlinx.json)
 }

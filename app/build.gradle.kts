@@ -1,7 +1,6 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    // id("com.google.devtools.ksp")
 }
 
 android {
@@ -70,6 +69,7 @@ dependencies {
 
     // [Room]
     implementation(libs.androidx.room.runtime)
+    implementation(libs.transport.runtime)
     annotationProcessor(libs.androidx.room.compiler)
 
     // [Koin]
@@ -90,7 +90,14 @@ dependencies {
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation(libs.androidx.material3)
 
+    // [Test]
+    // testImplementation(libs.kotlin.test.junit)
+    testImplementation(libs.mockk)
+    // testImplementation(libs.koin.test)
+    testImplementation(libs.koin.test.junit5)
     testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation("org.slf4j:slf4j-simple:1.7.30")
 }

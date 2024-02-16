@@ -8,6 +8,7 @@ val viewModelModule =
     module {
         viewModel {
             MainViewModel(
+                getArticleByIdUseCase = get(),
                 getMostEmailedArticlesUseCase = get(),
                 getMostSharedArticlesUseCase = get(),
                 getMostViewedArticlesUseCase = get(),

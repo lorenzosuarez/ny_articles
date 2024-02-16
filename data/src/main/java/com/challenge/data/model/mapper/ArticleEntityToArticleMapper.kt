@@ -2,9 +2,19 @@ package com.challenge.data.model.mapper
 
 import com.challenge.data.local.entities.ArticleEntity
 import com.challenge.domain.model.Article
+import com.challenge.domain.model.Media
+import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.json.Json
+
+@OptIn(ExperimentalSerializationApi::class)
+val json =
+    Json {
+        ignoreUnknownKeys = true
+        explicitNulls = false
+    }
 
 fun ArticleEntity.toArticle(): Article {
-    // val mediaList: List<MediaDto> = Json.decodeFromString(this.media)
+    val mediaList: List<Media> = json.decodeFromString(this.media)
 
     return Article(
         uri = this.uri,
@@ -17,6 +27,7 @@ fun ArticleEntity.toArticle(): Article {
         section = this.section,
         subsection = this.subsection,
         nytdSection = this.nytdSection,
+        adxKeywords = this.adxKeywords.orEmpty(),
         byline = this.byline,
         type = this.type,
         title = this.title,
@@ -25,7 +36,7 @@ fun ArticleEntity.toArticle(): Article {
         orgFacet = emptyList(),
         perFacet = emptyList(),
         geoFacet = emptyList(),
-        media = emptyList(), // mediaList,
+        media = mediaList,
         etaId = this.etaId,
     )
 }

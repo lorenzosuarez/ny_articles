@@ -19,6 +19,7 @@ fun ArticleDto.toArticle(): Article {
         section = this.section,
         subsection = this.subsection,
         nytdSection = this.nytdSection,
+        adxKeywords = this.adxKeywords,
         byline = this.byline,
         type = this.type,
         title = this.title,

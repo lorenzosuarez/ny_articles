@@ -1,3 +1,5 @@
+package com.challenge.data.model.mapper
+
 import com.challenge.data.local.entities.ArticleEntity
 import com.challenge.data.model.dto.ArticleDto
 import com.challenge.data.model.dto.MediaDto

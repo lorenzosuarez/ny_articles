@@ -14,7 +14,7 @@ interface ArticleDao {
     fun getAllArticles(): Flow<List<ArticleEntity>>
 
     @Query("SELECT * FROM articles WHERE id = :articleId")
-    fun getArticleById(articleId: Int): Flow<ArticleEntity>
+    fun getArticleById(articleId: Long): Flow<ArticleEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(articles: List<ArticleEntity>)
