@@ -5,7 +5,7 @@ import com.challenge.data.local.entities.ArticleEntity
 import kotlinx.coroutines.flow.Flow
 
 class LocalDataSource(private val articleDao: ArticleDao) {
-    suspend fun getAllArticles(): Flow<List<ArticleEntity>> = articleDao.getAllArticles()
+    fun getAllArticles(): Flow<List<ArticleEntity>> = articleDao.getAllArticles()
 
     suspend fun saveArticles(articles: List<ArticleEntity>) = articleDao.insertAll(articles)
 }
