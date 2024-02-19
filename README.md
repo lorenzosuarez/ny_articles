@@ -30,6 +30,14 @@ This application offers a sleek and modern experience for exploring the most pop
 
 To run this application, you will need a valid New York Times API key. You can obtain one by following the instructions at [New York Times Developer](https://developer.nytimes.com/).
 
+
+| Mode | Video |
+|------|-------|
+| Dark | [dark_mode.mp4](./demo/dark_mode.mp4) |
+| Light | [light_mode.mp4](./demo/light_mode.mp4) |
+
+
+
 ## Author ✒️
 
 **Lorenzo Suarez**
