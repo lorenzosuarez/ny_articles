@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.challenge.data"
+    namespace = "com.app.data"
     compileSdk = 34
 
     kotlinOptions {

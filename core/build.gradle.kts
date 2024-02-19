@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.challenge.core"
+    namespace = "com.app.core"
     compileSdk = 34
 
     kotlinOptions {

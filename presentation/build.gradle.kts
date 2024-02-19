@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.challenge.presentation"
+    namespace = "com.app.presentation"
     compileSdk = 34
 
     kotlinOptions {
@@ -57,4 +57,6 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.paging.compose.android)
+    debugImplementation(libs.androidx.ui.tooling)
 }

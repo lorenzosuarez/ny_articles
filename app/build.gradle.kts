@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.challenge.nyarticles"
+    namespace = "com.app.nytarticles"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.challenge.nyarticles"
+        applicationId = "com.app.nytarticles"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

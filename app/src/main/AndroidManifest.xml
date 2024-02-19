@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:name=".MyApp"
+        android:name="com.app.nytarticles.MyApp"
         android:networkSecurityConfig="@xml/network_security_config"
         android:allowBackup="true"
         android:windowSoftInputMode="adjustResize"

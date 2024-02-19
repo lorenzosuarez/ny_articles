@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.challenge.domain"
+    namespace = "com.app.domain"
     compileSdk = 34
 
     kotlinOptions {
